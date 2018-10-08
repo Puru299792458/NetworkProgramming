@@ -10,7 +10,7 @@ int main(void){
     int n,cost[MAXNODES][MAXNODES],dist[MAXNODES],visited[MAXNODES],path[MAXNODES],i,j,source,dest;
     cout << "\nEnter the number of nodes\n";
     cin >> n;
-    cout << "Enter the Cost Matrix\n" << endl;
+    cout << "Enter the Cost Matrix\n";
     for (i=0;i<n;i++){
     	for (j=0;j<n;j++)
             cin >> cost[i][j];
@@ -18,18 +18,17 @@ int main(void){
     for(i=0;i<n;i++){
         for(j=0;j<n;j++){
      		if(cost[i][j]!=9999 && i!=j){
-                cout<<"hello message sent from "<<i<<"to "<<j<<endl;
-                for(int k=0;k<100;k++);
-                cout<<"echo message sent from "<<j<<"to "<<i<<endl;
+                cout<<"Hello message sent from "<<i<<" to "<<j<<endl;
+                cout<<"Echo message sent from "<<j<<" to "<<i<<endl;
             }
         }
     }
     for (source = 0; source < n; source++){
-        cout << "\n//For Source Vertex : " << source << " shortest path to other vertices//"<< endl;
+        cout << "\nFor Source Vertex : " << source << " shortest path to other vertices "<< endl;
         for (dest=0; dest < n; dest++){
             fnDijkstra(cost,dist,path,visited,source,dest,n);
             if (dist[dest] == INF)
-                cout << dest << " not reachable" << endl;
+                cout << dest << " Not Reachable" << endl;
             else{
                 cout << endl;
                 i = dest;
